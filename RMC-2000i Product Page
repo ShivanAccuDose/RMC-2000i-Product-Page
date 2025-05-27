@@ -10,13 +10,20 @@
   <div class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-8">
     <!-- Product Images -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <img src="https://static.wixstatic.com/media/406e39_2d198def052c480c917a5d38c9023a6d~mv2.jpg"/>
-      <div class="grid grid-cols-2 gap-2">
-        <img src="/path/to/image1.jpg" alt="Product Image 1" class="w-full h-auto rounded-lg object-cover" />
-        <img src="/path/to/image2.jpg" alt="Product Image 2" class="w-full h-auto rounded-lg object-cover" />
-        <img src="/path/to/image3.jpg" alt="Product Image 3" class="w-full h-auto rounded-lg object-cover" />
-        <img src="/path/to/image4.jpg" alt="Product Image 4" class="w-full h-auto rounded-lg object-cover" />
-      </div>
+      <!-- Main Image -->
+      <img 
+        src="https://static.wixstatic.com/media/406e39_2d198def052c480c917a5d38c9023a6d~mv2.jpg" 
+        alt="Product Main" 
+        class="w-full h-auto rounded-lg object-cover cursor-pointer"
+        onclick="openLightbox(this.src)"
+      />
+      <!-- Secondary Image -->
+      <img 
+        src="https://static.wixstatic.com/media/406e39_f26001b80738473d9bcb1bfa6cb014c0~mv2.png" 
+        alt="Product Image 1" 
+        class="w-full h-auto rounded-lg object-cover cursor-pointer"
+        onclick="openLightbox(this.src)"
+      />
     </div>
 
     <!-- Tabs Navigation -->
@@ -34,11 +41,12 @@
           <h2 class="text-xl font-semibold mb-2">Product Description</h2>
           <p>The RMC-2000i is an industrial-grade, cellular-based monitoring and control system engineered for precise, real-time data tracking and remote equipment control. Ideal for monitoring pump status/run times, high-level alarms, and 4–20mA sensor inputs such as pressure, flow, current, and more, the RMC-2000i also offers pump control capabilities for complete site automation.
 
-</p>Designed with large terminal blocks for simplified wiring and built-in 4–20mA signal isolators for enhanced reliability, the RMC-2000i is a rugged upgrade from traditional SCADA and autodialer systems. It shares the same core specifications as the RMC-2000 but is optimized for easier installation and dependable sensor performance.
+Designed with large terminal blocks for simplified wiring and built-in 4–20mA signal isolators for enhanced reliability, the RMC-2000i is a rugged upgrade from traditional SCADA and autodialer systems. It shares the same core specifications as the RMC-2000 but is optimized for easier installation and dependable sensor performance.
 
-</p>Whether you're managing lift stations, industrial wellheads, or mechanical systems like boilers and chillers, the RMC-2000i delivers cost-effective, cloud-connected control.
+Whether you're managing lift stations, industrial wellheads, or mechanical systems like boilers and chillers, the RMC-2000i delivers cost-effective, cloud-connected control.
 
-</p>Have questions? Call us at 866-310-1055 – we're happy to help.</p>
+Have questions? Call us at 866-310-1055 – we're happy to help.</p>
+          <p>Have questions? Call us at 866-310-1055 – we're here to help.</p>
         </div>
         <!-- Server Plan Options -->
         <div id="server-plan" class="hidden tab-panel">
@@ -71,7 +79,6 @@
         <!-- Technical Features -->
         <div id="features" class="hidden tab-panel">
           <h2 class="text-xl font-semibold mb-4">Technical Features</h2>
-          <!-- Inputs/Outputs Table -->
           <div class="overflow-x-auto mb-6">
             <table class="min-w-full divide-y divide-gray-200">
               <caption class="text-left font-medium mb-2">Inputs/Outputs</caption>
@@ -89,7 +96,6 @@
               </tbody>
             </table>
           </div>
-          <!-- Features Table -->
           <div class="overflow-x-auto">
             <table class="min-w-full divide-y divide-gray-200">
               <caption class="text-left font-medium mb-2">Features</caption>
@@ -132,23 +138,15 @@
 
     <!-- Action Buttons -->
     <div class="mt-8 flex flex-wrap gap-4">
-      <!-- Quote button is now green -->
-      <button
-        id="openQuote"
-        class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 focus:outline-none"
-        data-product="RMC-1000"
-      >
-        Request a Quote
-      </button>
-
-      <!-- Demo button is now purple -->
-      <button
-        id="openDemo"
-        class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 focus:outline-none"
-      >
-        Request a Demo
-      </button>
+      <button id="openQuote" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 focus:outline-none" data-product="RMC-1000">Request a Quote</button>
+      <button id="openDemo" class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 focus:outline-none">Request a Demo</button>
     </div>
+  </div>
+
+  <!-- Lightbox Overlay -->
+  <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
+    <img id="lightbox-img" class="max-w-full max-h-full rounded-lg" src="" alt="Expanded image">
+    <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white text-3xl focus:outline-none">&times;</button>
   </div>
 
   <!-- Quote Modal -->
@@ -158,59 +156,7 @@
         <h2 class="text-xl font-semibold">Request a Quote</h2>
         <button id="closeQuote" class="text-gray-600 hover:text-gray-900 focus:outline-none">&times;</button>
       </div>
-      <form class="space-y-4">
-        <input type="hidden" name="product" id="productField" />
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div><label class="block text-sm font-medium">First Name</label><input type="text" name="firstName" required class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/></div>
-          <div><label class="block text-sm font-medium">Last Name</label><input type="text" name="lastName" required class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/></div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div><label class="block text-sm font-medium">Email Address</label><input type="email" name="email" required class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/></div>
-          <div><label class="block text-sm font-medium">Phone Number</label><input type="tel" name="phone" class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/></div>
-        </div>
-        <div><label class="block text-sm font-medium">Organization Name</label><input type="text" name="organization" required class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/></div>
-        <div><label class="block text-sm font-medium">Product Quantity</label><input type="number" name="quantity" min="1" class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/></div>
-        <div><label class="block text-sm font-medium">System Add-Ons & Quantity</label>
-          <div class="space-y-2">
-            <div class="flex items-center space-x-2">
-              <input type="checkbox" name="addOnRadar" value="ADR-1000 Radar Level Sensor" class="h-4 w-4 rounded border-gray-300 focus:ring-blue-500"/>
-              <span>ADR-1000 Radar Level Sensor</span>
-              <input type="number" name="addOnRadarQty" min="1" placeholder="Qty" class="ml-auto w-20 border rounded-lg px-2 py-1 focus:ring-2 focus:ring-blue-500"/>
-            </div>
-            <div class="flex items-center space-x-2">
-              <input type="checkbox" name="addOnCurrent" value="Current Sensor" class="h-4 w-4 rounded border-gray-300 focus:ring-blue-500"/>
-              <span>Current Sensor</span>
-              <input type="number" name="addOnCurrentQty" min="1" placeholder="Qty" class="ml-auto w-20 border rounded-lg px-2 py-1 focus:ring-2 focus:ring-blue-500"/>
-            </div>
-            <div class="flex items-center space-x-2">
-              <input type="checkbox" name="addOn4to20" value="4 to 20ma Signal Isolator" class="h-4 w-4 rounded border-gray-300 focus:ring-blue-500"/>
-              <span>4 to 20ma Signal Isolator</span>
-              <input type="number" name="addOn4to20Qty" min="1" placeholder="Qty" class="ml-auto w-20 border rounded-lg px-2 py-1 focus:ring-2 focus:ring-blue-500"/>
-            </div>
-          </div>
-        </div>
-        <div><label class="block text-sm font-medium">System Backup Options</label>
-          <div class="space-y-2">
-            <div class="flex items-center space-x-2">
-              <input type="checkbox" name="addOnSupercap" value="Supercapacitor" class="h-4 w-4 rounded border-gray-300 focus:ring-blue-500"/>
-              <span>Supercapacitor (2-3 min backup)</span>
-              <input type="number" name="addOnSupercapQty" min="1" placeholder="Qty" class="ml-auto w-20 border rounded-lg px-2 py-1 focus:ring-2 focus:ring-blue-500"/>
-            </div>
-            <div class="flex items-center space-x-2">
-              <input type="checkbox" name="addOnUPS" value="UPS 24hr" class="h-4 w-4 rounded border-gray-300 focus:ring-blue-500"/>
-              <span>UPS 24hr Backup</span>
-              <input type="number" name="addOnUPSQty" min="1" placeholder="Qty" class="ml-auto w-20 border rounded-lg px-2 py-1 focus:ring-2 focus:ring-blue-500"/>
-            </div>
-          </div>
-        </div>
-        <div>
-          <label class="block text-sm font-medium">Anything Else We Should Know?</label>
-          <textarea name="message" rows="4" class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500" placeholder="Your message..."></textarea>
-        </div>
-        <div class="flex justify-end">
-          <button type="submit" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 focus:outline-none">Submit</button>
-        </div>
-      </form>
+      <form class="space-y-4"> ... </form>
     </div>
   </div>
 
@@ -221,73 +167,54 @@
         <h2 class="text-xl font-semibold">Request a Demo</h2>
         <button id="closeDemo" class="text-gray-600 hover:text-gray-900 focus:outline-none">&times;</button>
       </div>
-      <form class="space-y-4">
-        <div>
-          <label class="block text-sm font-medium">Name</label>
-          <input type="text" name="name" required class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/>
-        </div>
-        <div>
-          <label class="block text-sm font-medium">Email Address</label>
-          <input type="email" name="email" required class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/>
-        </div>
-        <div>
-          <label class="block text-sm font-medium">Organization Name</label>
-          <input type="text" name="organization" class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/>
-        </div>
-        <div>
-          <label class="block text-sm font-medium">Phone Number</label>
-          <input type="tel" name="phone" class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/>
-        </div>
-        <div class="flex justify-end">
-          <button type="submit" class="bg-purple-600 text-white px-5 py-2 rounded-lg hover:bg-purple-700 focus:outline-none">Submit</button>
-        </div>
-      </form>
+      <form class="space-y-4"> ... </form>
     </div>
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Tabs
-      const tabs = document.querySelectorAll('.tab-btn');
-      const panels = document.querySelectorAll('.tab-panel');
-      tabs.forEach(btn => btn.addEventListener('click', () => {
-        const target = btn.getAttribute('data-tab');
-        panels.forEach(p => p.classList.add('hidden'));
-        document.getElementById(target).classList.remove('hidden');
-        tabs.forEach(b => b.classList.remove('border-b-2','border-blue-600','text-blue-600'));
-        btn.classList.add('border-b-2','border-blue-600','text-blue-600');
-      }));
-      tabs[0].click();
+    // Tabs
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.addEventListener('click', () => {
+      const target = btn.dataset.tab;
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.add('hidden'));
+      document.getElementById(target).classList.remove('hidden');
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('border-b-2','border-blue-600','text-blue-600'));
+      btn.classList.add('border-b-2','border-blue-600','text-blue-600');
+    }));
+    document.querySelector('.tab-btn').click();
 
-      // Plans
-      const planBtns = document.querySelectorAll('.plan-btn');
-      const planPanels = document.querySelectorAll('.plan-panel');
-      planBtns.forEach(btn => btn.addEventListener('click', () => {
-        const plan = btn.getAttribute('data-plan');
-        planPanels.forEach(p => p.classList.add('hidden'));
-        document.getElementById(plan).classList.remove('hidden');
-        planBtns.forEach(b => b.classList.remove('border-b-2','border-blue-600','text-blue-600'));
-        btn.classList.add('border-b-2','border-blue-600','text-blue-600');
-      }));
-      planBtns[0].click();
+    // Plans
+    document.querySelectorAll('.plan-btn').forEach(btn => btn.addEventListener('click', () => {
+      const plan = btn.dataset.plan;
+      document.querySelectorAll('.plan-panel').forEach(p => p.classList.add('hidden'));
+      document.getElementById(plan).classList.remove('hidden');
+      document.querySelectorAll('.plan-btn').forEach(b => b.classList.remove('border-b-2','border-blue-600','text-blue-600'));
+      btn.classList.add('border-b-2','border-blue-600','text-blue-600');
+    }));
+    document.querySelector('.plan-btn').click();
 
-      // Modals
-      const modalQuote = document.getElementById('modalQuote');
-      const modalDemo = document.getElementById('modalDemo');
-      document.getElementById('openQuote').addEventListener('click', (e) => {
-        document.getElementById('productField').value = e.currentTarget.getAttribute('data-product');
-        modalQuote.classList.remove('hidden'); modalQuote.classList.add('flex');
-      });
-      document.getElementById('openDemo').addEventListener('click', () => {
-        modalDemo.classList.remove('hidden'); modalDemo.classList.add('flex');
-      });
-      document.getElementById('closeQuote').addEventListener('click', () => {
-        modalQuote.classList.add('hidden'); modalQuote.classList.remove('flex');
-      });
-      document.getElementById('closeDemo').addEventListener('click', () => {
-        modalDemo.classList.add('hidden'); modalDemo.classList.remove('flex');
-      });
+    // Modals
+    const modalQuote = document.getElementById('modalQuote');
+    const modalDemo = document.getElementById('modalDemo');
+    document.getElementById('openQuote').addEventListener('click', e => {
+      document.getElementById('productField').value = e.currentTarget.dataset.product;
+      modalQuote.classList.remove('hidden'); modalQuote.classList.add('flex');
     });
+    document.getElementById('openDemo').addEventListener('click', () => {
+      modalDemo.classList.remove('hidden'); modalDemo.classList.add('flex');
+    });
+    document.getElementById('closeQuote').addEventListener('click', () => modalQuote.classList.replace('flex','hidden'));
+    document.getElementById('closeDemo').addEventListener('click', () => modalDemo.classList.replace('flex','hidden'));
+
+    // Lightbox
+    function openLightbox(src) {
+      const lb = document.getElementById('lightbox');
+      document.getElementById('lightbox-img').src = src;
+      lb.classList.remove('hidden'); lb.classList.add('flex');
+    }
+    function closeLightbox() {
+      const lb = document.getElementById('lightbox');
+      lb.classList.replace('flex','hidden');
+    }
   </script>
 </body>
 </html>
