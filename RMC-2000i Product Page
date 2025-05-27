@@ -82,8 +82,8 @@
               </thead>
               <tbody class="bg-white divide-y divide-gray-200">
                 <tr><td class="px-4 py-2 text-sm">Digital Inputs</td><td class="px-4 py-2 text-sm">7</td></tr>
-                <tr><td class="px-4 py-2 text-sm">Digital Outputs</td><td class="px-4 py-2 text-sm">0</td></tr>
-                <tr><td class="px-4 py-2 text-sm">Analog Inputs</td><td class="px-4 py-2 text-sm">0</td></tr>
+                <tr><td class="px-4 py-2 text-sm">Digital Outputs</td><td class="px-4 py-2 text-sm">2</td></tr>
+                <tr><td class="px-4 py-2 text-sm">Analog Inputs</td><td class="px-4 py-2 text-sm">4</td></tr>
                 <tr><td class="px-4 py-2 text-sm">Power Fail</td><td class="px-4 py-2 text-sm">1</td></tr>
               </tbody>
             </table>
