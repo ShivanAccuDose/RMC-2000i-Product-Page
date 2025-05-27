@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Product Page</title>
+  <title>RMC-2000i</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-800">
   <div class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-8">
     <!-- Product Images -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <img src="https://static.wixstatic.com/media/406e39_037676e9bb4046689f03fa75010ad736~mv2.jpg" alt="Product Main" class="w-full h-auto rounded-lg object-cover"/>
+      <img src="https://static.wixstatic.com/media/406e39_2d198def052c480c917a5d38c9023a6d~mv2.jpg" alt="Product Main" class="w-full h-auto rounded-lg object-cover"/>
       <div class="grid grid-cols-2 gap-2">
         <img src="/path/to/image1.jpg" alt="Product Image 1" class="w-full h-auto rounded-lg object-cover" />
         <img src="/path/to/image2.jpg" alt="Product Image 2" class="w-full h-auto rounded-lg object-cover" />
@@ -31,11 +31,13 @@
         <!-- Product Description -->
         <div id="description" class="tab-panel">
           <h2 class="text-xl font-semibold mb-2">Product Description</h2>
-          <p>The RMC-1000 is a powerful, cellular-based monitoring and control system designed for municipal, industrial, and commercial applications. Perfect for monitoring pump status and run times, high-level alarms, power failures, and other digital input signals, the RMC-1000 delivers real-time alerts and historical data through a secure cloud dashboard.<p>
+          <p>The RMC-2000i is our most recommended cellular-based monitoring and control system. Engineered for precise, real-time data tracking and remote equipment control. Ideal for monitoring pump status/run times, high-level alarms, and 4–20mA sensor inputs such as pressure, flow, current, and more, the RMC-2000i also offers pump control capabilities for complete site automation.
 
-<p>Whether you're monitoring lift stations in wastewater, wellheads in oil and gas, or chillers and boilers in an HVAC system, AccuDose can do it all cost-effectively and reliably. Built in the USA and engineered for plug-and-play installation, the RMC-1000 is the smart choice for those looking to replace outdated alarm panels or expensive SCADA systems.<p>
+<p>Designed with large terminal blocks for simplified wiring and built-in 4–20mA signal isolators for enhanced reliability, the RMC-2000i is a rugged upgrade from traditional SCADA and autodialer systems. It shares the same core specifications as the RMC-2000 but is optimized for easier installation and dependable sensor performance.
 
-<p>Have questions? Call us at 866-310-1055 – we're here to help.</p>
+<p>Whether you're managing lift stations, industrial wellheads, or mechanical systems like boilers and chillers, the RMC-2000i delivers cost-effective, cloud-connected control.
+
+<p>Have questions? Call us at 866-310-1055 – we're happy to help.</p>
         </div>
         <!-- Server Plan Options -->
         <div id="server-plan" class="hidden tab-panel">
