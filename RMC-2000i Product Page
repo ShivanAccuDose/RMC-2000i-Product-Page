@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RMC-2000i</title>
+  <title>Product Page</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-800">
   <div class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-8">
     <!-- Product Images -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <img src="https://static.wixstatic.com/media/406e39_2d198def052c480c917a5d38c9023a6d~mv2.jpg" alt="Product Main" class="w-full h-auto rounded-lg object-cover"/>
+      <img src="https://static.wixstatic.com/media/406e39_2d198def052c480c917a5d38c9023a6d~mv2.jpg"/>
       <div class="grid grid-cols-2 gap-2">
         <img src="/path/to/image1.jpg" alt="Product Image 1" class="w-full h-auto rounded-lg object-cover" />
         <img src="/path/to/image2.jpg" alt="Product Image 2" class="w-full h-auto rounded-lg object-cover" />
@@ -26,18 +26,19 @@
         <button class="tab-btn py-2 px-4 text-gray-600 hover:text-blue-600 focus:outline-none" data-tab="server-plan">Server Plan Options</button>
         <button class="tab-btn py-2 px-4 text-gray-600 hover:text-blue-600 focus:outline-none" data-tab="features">Technical Features</button>
         <button class="tab-btn py-2 px-4 text-gray-600 hover:text-blue-600 focus:outline-none" data-tab="download">Downloads</button>
+        <button class="tab-btn py-2 px-4 text-gray-600 hover:text-blue-600 focus:outline-none" data-tab="how-it-works">How it Works</button>
       </nav>
       <div class="tab-content mt-4">
         <!-- Product Description -->
         <div id="description" class="tab-panel">
           <h2 class="text-xl font-semibold mb-2">Product Description</h2>
-          <p>The RMC-2000i is our most recommended cellular-based monitoring and control system. Engineered for precise, real-time data tracking and remote equipment control. Ideal for monitoring pump status/run times, high-level alarms, and 4–20mA sensor inputs such as pressure, flow, current, and more, the RMC-2000i also offers pump control capabilities for complete site automation.
+          <p>The RMC-2000i is an industrial-grade, cellular-based monitoring and control system engineered for precise, real-time data tracking and remote equipment control. Ideal for monitoring pump status/run times, high-level alarms, and 4–20mA sensor inputs such as pressure, flow, current, and more, the RMC-2000i also offers pump control capabilities for complete site automation.
 
-<p>Designed with large terminal blocks for simplified wiring and built-in 4–20mA signal isolators for enhanced reliability, the RMC-2000i is a rugged upgrade from traditional SCADA and autodialer systems. It shares the same core specifications as the RMC-2000 but is optimized for easier installation and dependable sensor performance.
+</p>Designed with large terminal blocks for simplified wiring and built-in 4–20mA signal isolators for enhanced reliability, the RMC-2000i is a rugged upgrade from traditional SCADA and autodialer systems. It shares the same core specifications as the RMC-2000 but is optimized for easier installation and dependable sensor performance.
 
-<p>Whether you're managing lift stations, industrial wellheads, or mechanical systems like boilers and chillers, the RMC-2000i delivers cost-effective, cloud-connected control.
+</p>Whether you're managing lift stations, industrial wellheads, or mechanical systems like boilers and chillers, the RMC-2000i delivers cost-effective, cloud-connected control.
 
-<p>Have questions? Call us at 866-310-1055 – we're happy to help.</p>
+</p>Have questions? Call us at 866-310-1055 – we're happy to help.</p>
         </div>
         <!-- Server Plan Options -->
         <div id="server-plan" class="hidden tab-panel">
@@ -52,8 +53,8 @@
               <ul class="list-disc list-inside space-y-1">
                 <li>Cloud-Based Dashboard Access</li>
                 <li>SMS & Email Alerts</li>
-                <li>Add-On: GPS Tracking</li>
                 <li>Add-On: Phone Call Alerts</li>
+                <li>Add-On: GPS Tracking</li>
               </ul>
             </div>
             <div id="5year" class="hidden plan-panel">
@@ -116,13 +117,37 @@
             <li><a href="/datasheet4.pdf" download class="text-blue-600 hover:underline">Download Datasheet 4</a></li>
           </ul>
         </div>
+        <!-- How it Works -->
+        <div id="how-it-works" class="hidden tab-panel">
+          <h2 class="text-xl font-semibold mb-2">How it Works</h2>
+          <div class="mt-4">
+            <video controls class="w-full h-auto rounded-lg">
+              <source src="path/to/video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
       </div>
     </div>
 
-<!-- Action Buttons -->
+    <!-- Action Buttons -->
     <div class="mt-8 flex flex-wrap gap-4">
-      <button id="openQuote" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 focus:outline-none" data-product="RMC-1000">Request a Quote</button>
-      <button id="openDemo" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 focus:outline-none">Request a Demo</button>
+      <!-- Quote button is now green -->
+      <button
+        id="openQuote"
+        class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 focus:outline-none"
+        data-product="RMC-1000"
+      >
+        Request a Quote
+      </button>
+
+      <!-- Demo button is now purple -->
+      <button
+        id="openDemo"
+        class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 focus:outline-none"
+      >
+        Request a Demo
+      </button>
     </div>
   </div>
 
@@ -147,19 +172,44 @@
         <div><label class="block text-sm font-medium">Product Quantity</label><input type="number" name="quantity" min="1" class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/></div>
         <div><label class="block text-sm font-medium">System Add-Ons & Quantity</label>
           <div class="space-y-2">
-            <div class="flex items-center space-x-2"><input type="checkbox" name="addOnRadar" value="ADR-1000 Radar Level Sensor" class="h-4 w-4 rounded border-gray-300 focus:ring-blue-500"/><span>ADR-1000 Radar Level Sensor</span><input type="number" name="addOnRadarQty" min="1" placeholder="Qty" class="ml-auto w-20 border rounded-lg px-2 py-1 focus:ring-2 focus:ring-blue-500"/></div>
-            <div class="flex items-center space-x-2"><input type="checkbox" name="addOnCurrent" value="Current Sensor" class="h-4 w-4 rounded border-gray-300 focus:ring-blue-500"/><span>Current Sensor</span><input type="number" name="addOnCurrentQty" min="1" placeholder="Qty" class="ml-auto w-20 border rounded-lg px-2 py-1 focus:ring-2 focus:ring-blue-500"/></div>
-            <div class="flex items-center space-x-2"><input type="checkbox" name="addOn4to20" value="4 to 20ma Signal Isolator" class="h-4 w-4 rounded border-gray-300 focus:ring-blue-500"/><span>4 to 20ma Signal Isolator</span><input type="number" name="addOn4to20Qty" min="1" placeholder="Qty" class="ml-auto w-20 border rounded-lg px-2 py-1 focus:ring-2 focus:ring-blue-500"/></div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" name="addOnRadar" value="ADR-1000 Radar Level Sensor" class="h-4 w-4 rounded border-gray-300 focus:ring-blue-500"/>
+              <span>ADR-1000 Radar Level Sensor</span>
+              <input type="number" name="addOnRadarQty" min="1" placeholder="Qty" class="ml-auto w-20 border rounded-lg px-2 py-1 focus:ring-2 focus:ring-blue-500"/>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" name="addOnCurrent" value="Current Sensor" class="h-4 w-4 rounded border-gray-300 focus:ring-blue-500"/>
+              <span>Current Sensor</span>
+              <input type="number" name="addOnCurrentQty" min="1" placeholder="Qty" class="ml-auto w-20 border rounded-lg px-2 py-1 focus:ring-2 focus:ring-blue-500"/>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" name="addOn4to20" value="4 to 20ma Signal Isolator" class="h-4 w-4 rounded border-gray-300 focus:ring-blue-500"/>
+              <span>4 to 20ma Signal Isolator</span>
+              <input type="number" name="addOn4to20Qty" min="1" placeholder="Qty" class="ml-auto w-20 border rounded-lg px-2 py-1 focus:ring-2 focus:ring-blue-500"/>
+            </div>
           </div>
         </div>
         <div><label class="block text-sm font-medium">System Backup Options</label>
           <div class="space-y-2">
-            <div class="flex items-center space-x-2"><input type="checkbox" name="addOnSupercap" value="Supercapacitor" class="h-4 w-4 rounded border-gray-300 focus:ring-blue-500"/><span>Supercapacitor (2-3 min backup)</span><input type="number" name="addOnSupercapQty" min="1" placeholder="Qty" class="ml-auto w-20 border rounded-lg px-2 py-1 focus:ring-2 focus:ring-blue-500"/></div>
-            <div class="flex items-center space-x-2"><input type="checkbox" name="addOnUPS" value="UPS 24hr" class="h-4 w-4 rounded border-gray-300 focus:ring-blue-500"/><span>UPS 24hr Backup</span><input type="number" name="addOnUPSQty" min="1" placeholder="Qty" class="ml-auto w-20 border rounded-lg px-2 py-1 focus:ring-2 focus:ring-blue-500"/></div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" name="addOnSupercap" value="Supercapacitor" class="h-4 w-4 rounded border-gray-300 focus:ring-blue-500"/>
+              <span>Supercapacitor (2-3 min backup)</span>
+              <input type="number" name="addOnSupercapQty" min="1" placeholder="Qty" class="ml-auto w-20 border rounded-lg px-2 py-1 focus:ring-2 focus:ring-blue-500"/>
+            </div>
+            <div class="flex items-center space-x-2">
+              <input type="checkbox" name="addOnUPS" value="UPS 24hr" class="h-4 w-4 rounded border-gray-300 focus:ring-blue-500"/>
+              <span>UPS 24hr Backup</span>
+              <input type="number" name="addOnUPSQty" min="1" placeholder="Qty" class="ml-auto w-20 border rounded-lg px-2 py-1 focus:ring-2 focus:ring-blue-500"/>
+            </div>
           </div>
         </div>
-        <div><label class="block text-sm font-medium">Anything Else We Should Know?</label><textarea name="message" rows="4" class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500" placeholder="Your message..."></textarea></div>
-        <div class="flex justify-end"><button type="submit" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 focus:outline-none">Submit</button></div>
+        <div>
+          <label class="block text-sm font-medium">Anything Else We Should Know?</label>
+          <textarea name="message" rows="4" class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500" placeholder="Your message..."></textarea>
+        </div>
+        <div class="flex justify-end">
+          <button type="submit" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 focus:outline-none">Submit</button>
+        </div>
       </form>
     </div>
   </div>
@@ -172,11 +222,25 @@
         <button id="closeDemo" class="text-gray-600 hover:text-gray-900 focus:outline-none">&times;</button>
       </div>
       <form class="space-y-4">
-        <div><label class="block text-sm font-medium">Name</label><input type="text" name="name" required class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/></div>
-        <div><label class="block text-sm font-medium">Email Address</label><input type="email" name="email" required class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/></div>
-        <div><label class="block text-sm font-medium">Organization Name</label><input type="text" name="organization" class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/></div>
-        <div><label class="block text-sm font-medium">Phone Number</label><input type="tel" name="phone" class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/></div>
-        <div class="flex justify-end"><button type="submit" class="bg-green-600 text-white px-5 py-2 rounded-lg hover:bg-green-700 focus:outline-none">Submit</button></div>
+        <div>
+          <label class="block text-sm font-medium">Name</label>
+          <input type="text" name="name" required class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/>
+        </div>
+        <div>
+          <label class="block text-sm font-medium">Email Address</label>
+          <input type="email" name="email" required class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/>
+        </div>
+        <div>
+          <label class="block text-sm font-medium">Organization Name</label>
+          <input type="text" name="organization" class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/>
+        </div>
+        <div>
+          <label class="block text-sm font-medium">Phone Number</label>
+          <input type="tel" name="phone" class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/>
+        </div>
+        <div class="flex justify-end">
+          <button type="submit" class="bg-purple-600 text-white px-5 py-2 rounded-lg hover:bg-purple-700 focus:outline-none">Submit</button>
+        </div>
       </form>
     </div>
   </div>
@@ -194,6 +258,7 @@
         btn.classList.add('border-b-2','border-blue-600','text-blue-600');
       }));
       tabs[0].click();
+
       // Plans
       const planBtns = document.querySelectorAll('.plan-btn');
       const planPanels = document.querySelectorAll('.plan-panel');
@@ -205,6 +270,7 @@
         btn.classList.add('border-b-2','border-blue-600','text-blue-600');
       }));
       planBtns[0].click();
+
       // Modals
       const modalQuote = document.getElementById('modalQuote');
       const modalDemo = document.getElementById('modalDemo');
