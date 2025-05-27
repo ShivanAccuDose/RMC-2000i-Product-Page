@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-8">
+    <!-- Product Images -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <img src="https://static.wixstatic.com/media/406e39_037676e9bb4046689f03fa75010ad736~mv2.jpg" alt="Product Main" class="w-full h-auto rounded-lg object-cover"/>
+      <div class="grid grid-cols-2 gap-2">
+        <img src="/path/to/image1.jpg" alt="Product Image 1" class="w-full h-auto rounded-lg object-cover" />
+        <img src="/path/to/image2.jpg" alt="Product Image 2" class="w-full h-auto rounded-lg object-cover" />
+        <img src="/path/to/image3.jpg" alt="Product Image 3" class="w-full h-auto rounded-lg object-cover" />
+        <img src="/path/to/image4.jpg" alt="Product Image 4" class="w-full h-auto rounded-lg object-cover" />
+      </div>
+    </div>
+
+    <!-- Tabs Navigation -->
+    <div class="mt-8">
+      <nav class="flex border-b">
+        <button class="tab-btn py-2 px-4 border-b-2 border-blue-600 text-blue-600 focus:outline-none" data-tab="description">Product Description</button>
+        <button class="tab-btn py-2 px-4 text-gray-600 hover:text-blue-600 focus:outline-none" data-tab="server-plan">Server Plan Options</button>
+        <button class="tab-btn py-2 px-4 text-gray-600 hover:text-blue-600 focus:outline-none" data-tab="features">Technical Features</button>
+        <button class="tab-btn py-2 px-4 text-gray-600 hover:text-blue-600 focus:outline-none" data-tab="download">Downloads</button>
+      </nav>
+      <div class="tab-content mt-4">
+        <!-- Product Description -->
+        <div id="description" class="tab-panel">
+          <h2 class="text-xl font-semibold mb-2">Product Description</h2>
+          <p>The RMC-1000 is a powerful, cellular-based monitoring and control system designed for municipal, industrial, and commercial applications. Perfect for monitoring pump status and run times, high-level alarms, power failures, and other digital input signals, the RMC-1000 delivers real-time alerts and historical data through a secure cloud dashboard.<p>
+
+<p>Whether you're monitoring lift stations in wastewater, wellheads in oil and gas, or chillers and boilers in an HVAC system, AccuDose can do it all cost-effectively and reliably. Built in the USA and engineered for plug-and-play installation, the RMC-1000 is the smart choice for those looking to replace outdated alarm panels or expensive SCADA systems.<p>
+
+<p>Have questions? Call us at 866-310-1055 – we're here to help.</p>
+        </div>
+        <!-- Server Plan Options -->
+        <div id="server-plan" class="hidden tab-panel">
+          <h2 class="text-xl font-semibold mb-4">Server Plan Options</h2>
+          <div class="flex border-b">
+            <button class="plan-btn py-2 px-4 border-b-2 border-blue-600 text-blue-600 focus:outline-none" data-plan="3year">3 Year Plan</button>
+            <button class="plan-btn py-2 px-4 text-gray-600 hover:text-blue-600 focus:outline-none" data-plan="5year">5 Year Plan</button>
+          </div>
+          <div class="plan-content mt-4">
+            <div id="3year" class="plan-panel">
+              <h3 class="text-lg font-medium mb-2">3 Year Server Plan</h3>
+              <ul class="list-disc list-inside space-y-1">
+                <li>Cloud-Based Dashboard Access</li>
+                <li>SMS & Email Alerts</li>
+                <li>Add-On: GPS Tracking</li>
+                <li>Add-On: Phone Call Alerts</li>
+              </ul>
+            </div>
+            <div id="5year" class="hidden plan-panel">
+              <h3 class="text-lg font-medium mb-2">5 Year Server Plan</h3>
+              <ul class="list-disc list-inside space-y-1">
+                <li>Cloud-Based Dashboard Access</li>
+                <li>SMS & Email Alerts</li>
+                <li>GPS Tracking</li>
+                <li>Add-On: Phone Call Alerts</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Technical Features -->
+        <div id="features" class="hidden tab-panel">
+          <h2 class="text-xl font-semibold mb-4">Technical Features</h2>
+          <!-- Inputs/Outputs Table -->
+          <div class="overflow-x-auto mb-6">
+            <table class="min-w-full divide-y divide-gray-200">
+              <caption class="text-left font-medium mb-2">Inputs/Outputs</caption>
+              <thead class="bg-gray-50">
+                <tr>
+                  <th class="px-4 py-2 text-left text-sm font-semibold">Type</th>
+                  <th class="px-4 py-2 text-left text-sm font-semibold">Count</th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <tr><td class="px-4 py-2 text-sm">Digital Inputs</td><td class="px-4 py-2 text-sm">7</td></tr>
+                <tr><td class="px-4 py-2 text-sm">Digital Outputs</td><td class="px-4 py-2 text-sm">0</td></tr>
+                <tr><td class="px-4 py-2 text-sm">Analog Inputs</td><td class="px-4 py-2 text-sm">0</td></tr>
+                <tr><td class="px-4 py-2 text-sm">Power Fail</td><td class="px-4 py-2 text-sm">1</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Features Table -->
+          <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+              <caption class="text-left font-medium mb-2">Features</caption>
+              <thead class="bg-gray-50"><tr><th class="px-4 py-2 text-left text-sm font-semibold">Feature</th></tr></thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <tr><td class="px-4 py-2 text-sm">Cellular-based, all ISP carriers via global SIM: Verizon, T-Mobile, AT&amp;T, Sprint</td></tr>
+                <tr><td class="px-4 py-2 text-sm">Local Wi-Fi access point</td></tr>
+                <tr><td class="px-4 py-2 text-sm">Real-time alarms and data reporting</td></tr>
+                <tr><td class="px-4 py-2 text-sm">GPS with map overview</td></tr>
+                <tr><td class="px-4 py-2 text-sm">Dashboard overview</td></tr>
+                <tr><td class="px-4 py-2 text-sm">Cloud-based UI via free App</td></tr>
+                <tr><td class="px-4 py-2 text-sm">Compact NEMA 4X polycarbonate enclosure</td></tr>
+                <tr><td class="px-4 py-2 text-sm">MODBUS RS485</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Downloads -->
+        <div id="download" class="hidden tab-panel">
+          <h2 class="text-xl font-semibold mb-2">Downloads</h2>
+          <ul class="space-y-2">
+            <li><a href="/datasheet1.pdf" download class="text-blue-600 hover:underline">Download Datasheet 1</a></li>
+            <li><a href="/datasheet2.pdf" download class="text-blue-600 hover:underline">Download Datasheet 2</a></li>
+            <li><a href="/datasheet3.pdf" download class="text-blue-600 hover:underline">Download Datasheet 3</a></li>
+            <li><a href="/datasheet4.pdf" download class="text-blue-600 hover:underline">Download Datasheet 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+<!-- Action Buttons -->
+    <div class="mt-8 flex flex-wrap gap-4">
+      <button id="openQuote" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 focus:outline-none" data-product="RMC-1000">Request a Quote</button>
+      <button id="openDemo" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 focus:outline-none">Request a Demo</button>
+    </div>
+  </div>
+
+  <!-- Quote Modal -->
+  <div id="modalQuote" class="fixed inset-0 hidden items-center justify-center bg-black bg-opacity-50">
+    <div class="bg-white rounded-lg w-11/12 md:w-1/2 p-6">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-semibold">Request a Quote</h2>
+        <button id="closeQuote" class="text-gray-600 hover:text-gray-900 focus:outline-none">&times;</button>
+      </div>
+      <form class="space-y-4">
+        <input type="hidden" name="product" id="productField" />
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div><label class="block text-sm font-medium">First Name</label><input type="text" name="firstName" required class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/></div>
+          <div><label class="block text-sm font-medium">Last Name</label><input type="text" name="lastName" required class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div><label class="block text-sm font-medium">Email Address</label><input type="email" name="email" required class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/></div>
+          <div><label class="block text-sm font-medium">Phone Number</label><input type="tel" name="phone" class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/></div>
+        </div>
+        <div><label class="block text-sm font-medium">Organization Name</label><input type="text" name="organization" required class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/></div>
+        <div><label class="block text-sm font-medium">Product Quantity</label><input type="number" name="quantity" min="1" class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/></div>
+        <div><label class="block text-sm font-medium">System Add-Ons & Quantity</label>
+          <div class="space-y-2">
+            <div class="flex items-center space-x-2"><input type="checkbox" name="addOnRadar" value="ADR-1000 Radar Level Sensor" class="h-4 w-4 rounded border-gray-300 focus:ring-blue-500"/><span>ADR-1000 Radar Level Sensor</span><input type="number" name="addOnRadarQty" min="1" placeholder="Qty" class="ml-auto w-20 border rounded-lg px-2 py-1 focus:ring-2 focus:ring-blue-500"/></div>
+            <div class="flex items-center space-x-2"><input type="checkbox" name="addOnCurrent" value="Current Sensor" class="h-4 w-4 rounded border-gray-300 focus:ring-blue-500"/><span>Current Sensor</span><input type="number" name="addOnCurrentQty" min="1" placeholder="Qty" class="ml-auto w-20 border rounded-lg px-2 py-1 focus:ring-2 focus:ring-blue-500"/></div>
+            <div class="flex items-center space-x-2"><input type="checkbox" name="addOn4to20" value="4 to 20ma Signal Isolator" class="h-4 w-4 rounded border-gray-300 focus:ring-blue-500"/><span>4 to 20ma Signal Isolator</span><input type="number" name="addOn4to20Qty" min="1" placeholder="Qty" class="ml-auto w-20 border rounded-lg px-2 py-1 focus:ring-2 focus:ring-blue-500"/></div>
+          </div>
+        </div>
+        <div><label class="block text-sm font-medium">System Backup Options</label>
+          <div class="space-y-2">
+            <div class="flex items-center space-x-2"><input type="checkbox" name="addOnSupercap" value="Supercapacitor" class="h-4 w-4 rounded border-gray-300 focus:ring-blue-500"/><span>Supercapacitor (2-3 min backup)</span><input type="number" name="addOnSupercapQty" min="1" placeholder="Qty" class="ml-auto w-20 border rounded-lg px-2 py-1 focus:ring-2 focus:ring-blue-500"/></div>
+            <div class="flex items-center space-x-2"><input type="checkbox" name="addOnUPS" value="UPS 24hr" class="h-4 w-4 rounded border-gray-300 focus:ring-blue-500"/><span>UPS 24hr Backup</span><input type="number" name="addOnUPSQty" min="1" placeholder="Qty" class="ml-auto w-20 border rounded-lg px-2 py-1 focus:ring-2 focus:ring-blue-500"/></div>
+          </div>
+        </div>
+        <div><label class="block text-sm font-medium">Anything Else We Should Know?</label><textarea name="message" rows="4" class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500" placeholder="Your message..."></textarea></div>
+        <div class="flex justify-end"><button type="submit" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 focus:outline-none">Submit</button></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Demo Modal -->
+  <div id="modalDemo" class="fixed inset-0 hidden items-center justify-center bg-black bg-opacity-50">
+    <div class="bg-white rounded-lg w-11/12 md:w-1/2 p-6">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-semibold">Request a Demo</h2>
+        <button id="closeDemo" class="text-gray-600 hover:text-gray-900 focus:outline-none">&times;</button>
+      </div>
+      <form class="space-y-4">
+        <div><label class="block text-sm font-medium">Name</label><input type="text" name="name" required class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/></div>
+        <div><label class="block text-sm font-medium">Email Address</label><input type="email" name="email" required class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/></div>
+        <div><label class="block text-sm font-medium">Organization Name</label><input type="text" name="organization" class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/></div>
+        <div><label class="block text-sm font-medium">Phone Number</label><input type="tel" name="phone" class="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500"/></div>
+        <div class="flex justify-end"><button type="submit" class="bg-green-600 text-white px-5 py-2 rounded-lg hover:bg-green-700 focus:outline-none">Submit</button></div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Tabs
+      const tabs = document.querySelectorAll('.tab-btn');
+      const panels = document.querySelectorAll('.tab-panel');
+      tabs.forEach(btn => btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-tab');
+        panels.forEach(p => p.classList.add('hidden'));
+        document.getElementById(target).classList.remove('hidden');
+        tabs.forEach(b => b.classList.remove('border-b-2','border-blue-600','text-blue-600'));
+        btn.classList.add('border-b-2','border-blue-600','text-blue-600');
+      }));
+      tabs[0].click();
+      // Plans
+      const planBtns = document.querySelectorAll('.plan-btn');
+      const planPanels = document.querySelectorAll('.plan-panel');
+      planBtns.forEach(btn => btn.addEventListener('click', () => {
+        const plan = btn.getAttribute('data-plan');
+        planPanels.forEach(p => p.classList.add('hidden'));
+        document.getElementById(plan).classList.remove('hidden');
+        planBtns.forEach(b => b.classList.remove('border-b-2','border-blue-600','text-blue-600'));
+        btn.classList.add('border-b-2','border-blue-600','text-blue-600');
+      }));
+      planBtns[0].click();
+      // Modals
+      const modalQuote = document.getElementById('modalQuote');
+      const modalDemo = document.getElementById('modalDemo');
+      document.getElementById('openQuote').addEventListener('click', (e) => {
+        document.getElementById('productField').value = e.currentTarget.getAttribute('data-product');
+        modalQuote.classList.remove('hidden'); modalQuote.classList.add('flex');
+      });
+      document.getElementById('openDemo').addEventListener('click', () => {
+        modalDemo.classList.remove('hidden'); modalDemo.classList.add('flex');
+      });
+      document.getElementById('closeQuote').addEventListener('click', () => {
+        modalQuote.classList.add('hidden'); modalQuote.classList.remove('flex');
+      });
+      document.getElementById('closeDemo').addEventListener('click', () => {
+        modalDemo.classList.add('hidden'); modalDemo.classList.remove('flex');
+      });
+    });
+  </script>
+</body>
+</html>
